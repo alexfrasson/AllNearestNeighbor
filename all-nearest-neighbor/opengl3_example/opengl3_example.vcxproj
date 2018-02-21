@@ -103,7 +103,7 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\libs\glfw\include;$(SolutionDir)\libs\gl3w;..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libs\glfw\include;$(SolutionDir)\libs\gl3w;$(SolutionDir)\include;$(SolutionDir)\src;..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -161,19 +161,15 @@
     <ClCompile Include="..\src\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="..\src\KdTree.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Parser.cpp" />
     <ClCompile Include="..\src\Point.cpp" />
-    <ClCompile Include="..\src\PointValidation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\AABB.h" />
     <ClInclude Include="..\include\imgui\imconfig.h" />
     <ClInclude Include="..\include\imgui\imgui.h" />
     <ClInclude Include="..\include\imgui\imgui_internal.h" />
     <ClInclude Include="..\include\KdTree.h" />
-    <ClInclude Include="..\include\Parser.h" />
     <ClInclude Include="..\include\Point.h" />
-    <ClInclude Include="..\include\PointValidation.h" />
-    <ClInclude Include="..\include\Timer.h" />
     <ClInclude Include="..\libs\gl3w\GL\gl3w.h" />
     <ClInclude Include="..\libs\gl3w\GL\glcorearb.h" />
     <ClInclude Include="..\src\imgui_impl_glfw_gl3.h" />

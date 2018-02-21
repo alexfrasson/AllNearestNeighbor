@@ -34,13 +34,7 @@
     <ClCompile Include="..\src\imgui_impl_glfw_gl3.cpp">
       <Filter>sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\PointValidation.cpp">
-      <Filter>sources\nn</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Point.cpp">
-      <Filter>sources\nn</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Parser.cpp">
       <Filter>sources\nn</Filter>
     </ClCompile>
     <ClCompile Include="..\src\KdTree.cpp">
@@ -66,19 +60,13 @@
     <ClInclude Include="..\src\imgui_impl_glfw_gl3.h">
       <Filter>sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\Parser.h">
-      <Filter>sources\nn</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\Point.h">
       <Filter>sources\nn</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\PointValidation.h">
-      <Filter>sources\nn</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\Timer.h">
-      <Filter>sources\nn</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\KdTree.h">
+      <Filter>sources\nn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AABB.h">
       <Filter>sources\nn</Filter>
     </ClInclude>
   </ItemGroup>
