@@ -76,7 +76,7 @@ KdTreeNode* KdTree::buildRecursive(uint32_t begin, uint32_t end, AABB aabb, int 
 	uint32_t mid = begin + static_cast<uint32_t>(std::floor(count * 0.5));
 
 	// Colinear points will remain on the right node.
-	while (mid > 0)
+	while (mid > begin)
 	{
 		if (m_Points[mid][node->axis] != m_Points[mid - 1][node->axis])
 			break;
