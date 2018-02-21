@@ -76,6 +76,7 @@ KdTreeNode* KdTree::buildRecursive(uint32_t begin, uint32_t end, AABB aabb, int 
 	uint32_t mid = begin + static_cast<uint32_t>(std::floor(count * 0.5));
 
 	// Colinear points will remain on the right node.
+	bool forceRightLeave = end - mid <= (uint32_t)m_LeafCapacity;
 	while (mid > begin)
 	{
 		if (m_Points[mid][node->axis] != m_Points[mid - 1][node->axis])
@@ -108,7 +109,16 @@ KdTreeNode* KdTree::buildRecursive(uint32_t begin, uint32_t end, AABB aabb, int 
 #endif
 	{
 		node->left = buildRecursive(begin, mid, aabbLeft, depth + 1);
-		node->right = buildRecursive(mid, end, aabbRight, depth + 1);
+		// Leaf capacity may not be reached if we move the mid index.
+		// Must account for that.
+		if (forceRightLeave)
+		{
+			node->right = new KdTreeNode();
+			node->right->begin = mid;
+			node->right->count = (uint8_t)(end - mid);
+		}
+		else
+			node->right = buildRecursive(mid, end, aabbRight, depth + 1);
 	}
 
 	return node;
